@@ -1,4 +1,4 @@
-#Fit the dice
+#Fit-the-dice
 
 It is fun little mini game based on dice rolling.
 The full exectuable game is in my itch.io page

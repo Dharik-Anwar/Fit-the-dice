@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sources/UI/Buttons/Retry Button.gd" type="Script" id=1]
+[ext_resource path="res://sources/Resources/Button/Pressed.tres" type="StyleBox" id=2]
+[ext_resource path="res://sources/Resources/Button/Normal.tres" type="StyleBox" id=3]
+[ext_resource path="res://sources/Resources/Button/Hover.tres" type="StyleBox" id=4]
+
+[node name="Retry Button" type="Button"]
+margin_right = 12.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 400, 100 )
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "RETRY"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="." to="." method="_on_Retry_Button_pressed"]

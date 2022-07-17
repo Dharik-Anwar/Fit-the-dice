@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sources/UI/Buttons/Quit Button.gd" type="Script" id=1]
+[ext_resource path="res://sources/Resources/Button/Pressed.tres" type="StyleBox" id=2]
+[ext_resource path="res://sources/Resources/Button/Normal.tres" type="StyleBox" id=3]
+[ext_resource path="res://sources/Resources/Button/Hover.tres" type="StyleBox" id=4]
+
+[node name="Quit Button" type="Button"]
+margin_right = 12.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 400, 100 )
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "QUIT"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_up" from="." to="." method="_on_Quit_Button_button_up"]

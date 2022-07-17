@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sources/Resources/Font/theme.tres" type="Theme" id=1]
+[ext_resource path="res://sources/World/Level.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sources/UI/Buttons/Scene Change Button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/Background/background.png" type="Texture" id=4]
+
+[node name="Controls Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -94.5
+margin_right = 94.5
+margin_bottom = 83.0
+rect_min_size = Vector2( 0, 100 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "CONTROLS"
+align = 1
+valign = 1
+
+[node name="Controls" type="Label" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 80.0
+margin_top = -220.0
+margin_right = 947.0
+margin_bottom = 292.0
+custom_colors/font_color = Color( 0.92549, 0.0627451, 0.0627451, 1 )
+text = "Movement:
+1. ASWD or Left, Right, Down, Up
+2. Escape for pause
+
+Instruction:
+1. The player is the yellow dice.
+2. The target is the red dice.
+3. The player must coincide with the target.
+4. The oreintation of the dice are in the right panel.
+5. The player has to coincide with the target dice 
+    before the time runs out."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play Button" parent="." instance=ExtResource( 3 )]
+margin_left = 720.0
+margin_top = 120.0
+margin_right = 920.0
+margin_bottom = 220.0
+rect_min_size = Vector2( 200, 100 )
+text = "PLAY"
+next_scene = ExtResource( 2 )

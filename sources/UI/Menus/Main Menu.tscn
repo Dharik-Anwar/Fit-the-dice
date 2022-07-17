@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://sources/Resources/Font/theme.tres" type="Theme" id=1]
+[ext_resource path="res://sources/UI/Buttons/Quit Button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sources/UI/Buttons/Scene Change Button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://sources/World/Level.tscn" type="PackedScene" id=4]
+[ext_resource path="res://sources/UI/Menus/Controls Menu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/Background/background.png" type="Texture" id=6]
+
+[node name="Main Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -129.5
+margin_top = 80.0
+margin_right = 129.5
+margin_bottom = 120.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "FIT THE DICE"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -154.0
+margin_right = 200.0
+margin_bottom = 154.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play Button" parent="VBoxContainer" instance=ExtResource( 3 )]
+margin_right = 400.0
+margin_bottom = 100.0
+text = "PLAY"
+next_scene = ExtResource( 4 )
+
+[node name="Controls Button" parent="VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 104.0
+margin_right = 400.0
+margin_bottom = 204.0
+text = "CONTROLS"
+next_scene = ExtResource( 5 )
+
+[node name="Quit Button" parent="VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 208.0
+margin_right = 400.0
+margin_bottom = 308.0

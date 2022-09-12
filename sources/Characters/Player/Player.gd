@@ -1,9 +1,8 @@
 extends KinematicBody2D
 
+signal match_pattern
 
-onready var player = $"."
 onready var anim_sprite = $AnimatedSprite
-
 
 const direction_keys = {
 	"LEFT": Vector2.LEFT,
@@ -24,31 +23,19 @@ var velocity = Vector2.ZERO
 var collision
 
 func _ready() -> void:
-	initialize_face()
 	anim_sprite.frame = face_pieces.TOP - 1
+	
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var input_key = recive_input()
 	if input_key == null:
 		return
-	
 	move(input_key)
 
 func move(input: String):
 	velocity = direction_keys[input]*64
 	collision = move_and_collide(velocity)
 	faces(input, collision)
-	
-
-func initialize_face():
-	randomize()
-	var number_roll = randi() % 10
-	for i in range(number_roll):
-		var rand = randi() % 10 + 1
-		if rand%2 == 0:
-			roll("TOP", "LEFT", "BOTTOM", "RIGHT")
-		else:
-			roll("TOP", "FRONT", "BOTTOM", "BACK")
 
 func faces(input, collision):
 	if collision != null:
@@ -83,3 +70,9 @@ func recive_input() -> String:
 		if inputs[key] == true:
 			input = key
 	return input
+
+
+func _on_TargetDetector_area_entered(area: Area2D) -> void:
+	if face_pieces.hash() == area.pieces.hash():
+		emit_signal("match_pattern")
+	

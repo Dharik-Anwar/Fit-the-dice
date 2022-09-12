@@ -18,3 +18,5 @@ func animate():
 	for key in keys:
 		var face = sprite.find_node(key)
 		face.frame = faces[key] - 1
+
+
